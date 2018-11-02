@@ -1,0 +1,12 @@
+netdata:
+  build: .
+  cap_add:
+  - SYS_PTRACE
+  volumes:
+  - /proc:/host/proc:ro
+  - /sys:/host/sys:ro
+  - /etc/localtime:/etc/localtime:ro
+  ports:
+  - 127.0.0.1:8080:19999
+  restart:
+    always
